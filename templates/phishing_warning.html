@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Warning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div>Phishing Detector</div>
+        <div class="search-box"><input type="text" placeholder="Search mail"></div>
+        <div><img src="{{ url_for('static', filename='images/account_logo.png') }}" alt="Account" class="account-logo"></div>
+    </div>
+    <div class="sidebar">
+        <a href="#">Inbox</a>
+        <a href="#">Starred</a>
+        <a href="#">Snoozed</a>
+        <a href="#">Sent</a>
+        <a href="#">Drafts</a>
+        <a href="#">More</a>
+    </div>
+    <div class="email-content">
+        <h2>Warning: Phishing Email Detected</h2>
+        <p class="phishing-message">{{ email }}</p>
+        <button onclick="window.history.back()">Back</button>
+    </div>
+</body>
+</html>
